@@ -1,0 +1,137 @@
+html {
+  box-sizing: border-box;
+}
+
+/* question 2 */
+.container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: red;
+}
+
+.text {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+/* question 3 albumList */
+table {
+  border-collapse: collapse;
+}
+
+.album-table {
+  width: 100%;
+  border: 2px solid black;
+}
+
+.caption {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 0;
+  border-bottom: 1px solid #bbb;
+}
+
+thead {
+  font-size: 1.3rem;
+  background-color: #dedee4;
+}
+
+.mobile-header {
+  display: none;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+img {
+  width: 10rem;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+
+  .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+  }
+
+  .large-header {
+    display: none;
+  }
+
+  .mobile-header,
+  th {
+    display: block;
+  }
+
+  tr td {
+    border: none;
+    text-align: start;
+  }
+
+  tbody tr {
+    border: 1px solid #bbb;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "albumName image"
+      "artistName image"
+      "rating image";
+  }
+
+  tr td:nth-child(1) {
+    grid-area: albumName;
+    color: #426ccf;
+  }
+
+  tr td:nth-child(2) {
+    grid-area: artistName;
+    color: #426ccf;
+  }
+
+  tr td:nth-child(3) {
+    grid-area: image;
+  }
+
+  tr td:nth-child(4) {
+    grid-area: rating;
+    color: #426ccf;
+  }
+
+  .image-container {
+    margin: auto;
+  }
+
+  tr td:nth-child(1)::before {
+    content: "Album Name: ";
+    color: black;
+  }
+
+  tr td:nth-child(2)::before {
+    content: "Artist Name: ";
+    color: black;
+  }
+
+  tr td:nth-child(4)::before {
+    content: "Rating: ";
+    color: black;
+  }
+}
